@@ -5,6 +5,8 @@
     position: relative;
     padding-bottom: 12vh;
     color: #6b6d6fcb;
+    display: flex;
+    flex-direction: column;
     
 
 }
@@ -17,7 +19,54 @@
 .Main .Gemini_text{
     font-size: 25px;
 }
+
+.Main .user_logo img{
+    border-radius: 50px;
+}
  .icons{
     height: 40px;
     width: 40px;
+}
+
+.Center_Box{
+    max-width:900px;
+    margin:30px 200px;
+}
+.Center_Box .hello_text {
+    font-size: 56px;
+    margin-top: 10px 0px;
+    color: #c4c5c7;
+    font-weight: 500;
+    padding: 20px;
+}
+.Center_Box .hello_text span{
+    background: -webkit-linear-gradient(16deg,#4b90ff,#ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Center_Box .Container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+    margin-top: 25px;
+    gap:15px;
+    padding: 10px;
+}
+
+.Container .Card {
+    height: 200px;
+    padding: 15px;
+    background-color: #f0f4f0;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.Container .Card img{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    background-color: white;
+    border-radius: 50px;
 }
