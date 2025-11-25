@@ -51,6 +51,24 @@ function Main() {
                 </div>
 
               </div>
+
+              <div className='bottom_container'>
+                <div className='Search_Box'>
+                  <input placeholder="Enter a prompt here" type="text" />
+                  <div className='images'>
+                    <img src={assets.gallery_icon} alt="" />
+                    <img src={assets.mic_icon} alt="" />
+                    <img src={assets.send_icon} alt="" />
+                  </div>
+                  
+                </div>
+
+                <div className='gemini_text'>
+                  <p>Gemini may display inaccurate info, including about people, so double-click its response.Your privacy and Gemini Apps</p>
+                </div>
+
+
+              </div>
             </div>
 
     </div>

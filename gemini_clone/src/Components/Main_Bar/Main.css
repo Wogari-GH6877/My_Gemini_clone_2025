@@ -79,3 +79,50 @@
 .Container .Card:hover{
    background-color :#dfe4df;
 }
+
+.bottom_container{
+    position: absolute;
+    width: 100%;
+    max-width: 900px;
+    bottom: 0;
+    margin: auto;
+    
+
+
+
+}
+
+.bottom_container .Search_Box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #f0f4f0;
+    border-radius: 50px;
+    gap:15px;
+
+}
+
+.bottom_container .Search_Box input{
+    outline: none;
+    border: none;
+    flex: 1;
+    padding: 8px 12px;
+    background-color: transparent;
+    font-size: 18px;
+}
+.images{
+    display: flex;
+    gap:10px
+}
+.images img{
+    width: 24px;
+    cursor: pointer;
+}
+
+.gemini_text{
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+}
