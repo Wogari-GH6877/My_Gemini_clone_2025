@@ -70,3 +70,12 @@
     background-color: white;
     border-radius: 50px;
 }
+
+.Container .Card p{
+    font-size: 17px;
+    color: #585858;
+}
+
+.Container .Card:hover{
+   background-color :#dfe4df;
+}
