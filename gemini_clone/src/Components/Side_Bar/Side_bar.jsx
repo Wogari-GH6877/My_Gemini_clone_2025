@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { assets } from '../../assets/assets'
 import "./Side_bar.css"
+import { Appcontext } from '../../Context/Context';
 
 function Side_bar() {
 
   const [extend,setExtend]=useState(false);
+  const {onSent,prevPrompt,setRecentPrompt,newChat}=useContext(Appcontext);
+
+  const loadPrompt= async(prompt)=>{
+    setRecentPrompt(prompt)
+    await onSent(prompt);
+  }
   return (
     <>
       <div className='Main_Side_Bar'>
@@ -12,16 +19,22 @@ function Side_bar() {
             <div className='Top1'>
                 <img onClick={()=>setExtend(!extend)}className="icons menu"src={assets.menu_icon} alt="" />
             </div>
-            <div className='Top2'>
+            <div onClick={()=>newChat()}className='Top2'>
                 <img className="icons input" src={assets.plus_icon} alt="" />
                 {extend?<input type="text" placeholder='New Chat'/>:null}
             </div>
             {extend?<div className='Recent'>
                 <p className='recent_title'>Recent</p>
-                <div className='recent_chat'>
+                {prevPrompt.map((item,index)=>{
+                  return(
+                    <div onClick={()=>loadPrompt(item)}className='recent_chat'>
                   <img className="icons "src={assets.message_icon} alt="" />
-                  <span>The Recent Meassage..</span>
+                  <p>{item.slice(0,18)}...</p>
                 </div>
+
+                  )
+                })}
+                
             </div>:null}
 
         </div>

@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import {main} from "../Gemini_Config/GeminiConfig.jsx";
 import { useEffect } from "react";
+import {marked} from "marked";
 
 export const Appcontext=createContext();
 
@@ -11,32 +12,49 @@ const ContextProvider =(props)=>{
   const [prevPrompt,setPrevPrompt]=useState([]);
   const [showResult,setShowResult]=useState(false);
   const [loading,setLoading]=useState(false);
-  const [resultData,setResutData]=useState("");
+  const [resultData,setResultData]=useState("");
 
-  const delayPara=(index,nextWord)=>{
+//   const delayPara=(index,nextWord)=>{
 
-  }
+//     setTimeout(function(){
+//         setResultData(prev=> prev + nextWord);
+//     },75*index)
+
+//   }
+
+   const newChat=()=>{
+    setLoading(false);
+    setShowResult(false);
+   }
 
    const onSent=async(prompt)=>
 
    {  
-     setResutData("");
+     setResultData("");
      setLoading(true);
      setShowResult(true);
-     setRecentPrompt(input);
-     const response= await main(input);
-     const responseArray=response.split("**");
-     let newResponse;
-
-     for(let i=0;i<responseArray.length;i++){
-        if(i===0 || i%2!==1){
-            newResponse+=responseArray[i];
-        }
-        else{
-            newResponse+="<b>"+responseArray[i]+"<b>"
-        }
+     let response;
+     if(prompt !==undefined){
+        response=await main(prompt)
+        setRecentPrompt(prompt)
      }
-     setResutData(newResponse);
+     else{
+        setPrevPrompt(prev=>[...prev]);
+        setRecentPrompt(input);
+        response= await main(input);
+     }
+     setRecentPrompt(input);
+     setPrevPrompt(prev=>[...prev,input])
+
+     const html=marked(response);
+     setResultData(html);
+    //  let newResponse2=newResponse2.split("*").join("</br>");
+    //  let newResponseArray=newResponse2.split(" ");
+
+    //  for(let i=0; i < newResponseArray.length;i++){
+    //     const nextWord = newResponseArray[i]
+    //     delayPara(i,nextWord + " ")
+    //  }
      setLoading(false);
      setInput("");
 }
@@ -47,7 +65,7 @@ const ContextProvider =(props)=>{
     const contextValue={
         input,setInput,recentPrompt,setRecentPrompt
         ,prevPrompt,setPrevPrompt,showResult,setShowResult,
-        loading,setLoading,resultData,setResutData,onSent
+        loading,setLoading,resultData,setResultData,onSent,newChat
 
     }
 

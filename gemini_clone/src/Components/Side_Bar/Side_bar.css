@@ -42,6 +42,7 @@
 }
 .Recent{
     margin-top: 10px;
+    animation: fadeIn 1.5s;
     
 }
 .recent_chat{
@@ -60,4 +61,10 @@
     background-color: #f6f8faf4;
     cursor: pointer;
     
+}
+
+@media(max-width:600px){
+    .Main_Side_Bar{
+        display: none;
+    }
 }

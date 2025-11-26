@@ -69,7 +69,8 @@ function Main() {
                    <hr />
                    <hr />
 
-                  </div>:<p className='result_text'>{resultData}</p>
+                  </div>:<div dangerouslySetInnerHTML={{ __html: resultData }} />
+
 }
                   
                 </div>
@@ -84,7 +85,7 @@ function Main() {
                   <div className='images'>
                     <img src={assets.gallery_icon} alt="" />
                     <img src={assets.mic_icon} alt="" />
-                    <img onClick={()=>onSent()} src={assets.send_icon} alt="" />
+                    {input?<img onClick={()=>onSent()} src={assets.send_icon} alt="" />:null}
                   </div>
                   
                 </div>
