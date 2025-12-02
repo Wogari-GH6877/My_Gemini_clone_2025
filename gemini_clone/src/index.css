@@ -8,7 +8,7 @@
 }
 
 #root{
-  min-height: 100vh;
+  max-height: 100vh;
   animation:fadeIn 1.5s;
   
 }

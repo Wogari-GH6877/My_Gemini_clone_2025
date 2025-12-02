@@ -1,8 +1,8 @@
 .Main_Side_Bar{
     display: inline-flex;
     flex-direction: column;
-    background-color: #d0d1d2cb;
-    min-height: 100vh;
+    background-color: rgb(246, 248, 250);
+    min-height: 90vh;
     padding-left: 20px;
     padding-top: 20px;
     padding-right: 20px;
@@ -15,6 +15,7 @@
     cursor: pointer;
 }
 .Main_Side_Bar .Top2{
+    margin-top: 10px;
     display: flex;
     padding: 10px;
     border-radius: 50px;
@@ -36,7 +37,7 @@
 .bottom_part{
     display: flex;
     gap:10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding: 10px;
     border-radius: 50px;
 }
@@ -46,13 +47,13 @@
     
 }
 .recent_chat{
-    margin: 10px;
+    margin: 5px;
     display: flex;
-    padding: 10px;
+    padding: 7px;
     border-radius: 50px;
 }
 .recent_chat:hover{
-    background-color: #f6f8faf4;
+    background-color: #e9f0f7f4;
     cursor: pointer;
     
 }

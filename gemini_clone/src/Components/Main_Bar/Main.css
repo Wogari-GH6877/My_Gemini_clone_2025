@@ -30,11 +30,11 @@
 
 .Center_Box{
     max-width:900px;
-    margin:30px 200px;
+    margin:0 200px;
 }
 .Center_Box .hello_text {
     font-size: 56px;
-    margin-top: 10px 0px;
+    margin-top: 8px 0px;
     color: #c4c5c7;
     font-weight: 500;
     padding: 20px;
@@ -129,7 +129,7 @@
 
 .result{
     padding: 0 5%;
-    max-height: 70vh;
+    max-height: 60vh;
     overflow-y: scroll;
 }
 .result::-webkit-scrollbar{
@@ -187,10 +187,15 @@
 }
 
 @media(max-width:600px){
+    .Center_Box{
+        width: 300px;
+    }
     .bottom_container .Search_Box input{
         display: flex;
         width: 150px;
     }
+    
+    
     .images img{
         width: 20px;
     }
@@ -200,5 +205,4 @@
     .Search_Box div{
         gap:5px;
     }
-
 }
